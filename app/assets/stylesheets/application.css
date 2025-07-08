@@ -8,3 +8,11 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+:root {
+    --grey: #BAC1B8;
+    --blue: #295bbe;
+    --green: #0c7C59;
+    --dark:#2B303A;
+    --orange: #D64933;
+    }
