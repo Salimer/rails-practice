@@ -61,7 +61,7 @@ class TreesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_tree
-      @tree = Tree.find(params.expect(:id))
+      @tree = Tree.friendly.find(params.expect(:id))
     end
 
     # Only allow a list of trusted parameters through.
