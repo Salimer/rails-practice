@@ -8,3 +8,5 @@
 
   <%= button_to "Destroy this book", @book, method: :delete %>
 </div>
+
+<%= button_to "Mark as Read", mark_as_read_book_path(@book), method: :post %>

@@ -57,14 +57,26 @@ class BooksController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_book
-      @book = Book.find(params.expect(:id))
-    end
+  def recent
+    @books = Book.order(created_at: :desc).limit(5)
+    render :index
+  end
 
-    # Only allow a list of trusted parameters through.
-    def book_params
-      params.expect(book: [ :title, :author, :description, :published_on ])
-    end
+  def mark_as_read
+    @book = Book.find(params[:id])
+    flash[:notice] = "Marked '#{@book.title}' as read!"
+    redirect_to @book
+  end
+
+  private
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_book
+    @book = Book.find(params.expect(:id))
+  end
+
+  # Only allow a list of trusted parameters through.
+  def book_params
+    params.expect(book: [:title, :author, :description, :published_on])
+  end
 end
