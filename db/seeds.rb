@@ -7,3 +7,26 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+Book.destroy_all
+Author.destroy_all
+Category.destroy_all
+
+author1 = Author.create!(name: "George Orwell")
+author2 = Author.create!(name: "J.K. Rowling")
+
+fiction = Category.create!(name: "Fiction")
+dystopian = Category.create!(name: "Dystopian")
+fantasy = Category.create!(name: "Fantasy")
+
+book1 = Book.create!(title: "1984", author: author1)
+book2 = Book.create!(title: "Animal Farm", author: author2)
+book3 = Book.create!(title: "Harry Potter", author: author2)
+
+book1.categories << fiction
+book1.categories << dystopian
+
+book2.categories << fiction
+
+book3.categories << fiction
+book3.categories << fantasy
