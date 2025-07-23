@@ -13,4 +13,16 @@
   <% end %>
 </div>
 
+<br>
+<br>
+
+<p> <%= show_visit_count(@visit_count) %> </p>
+
+<br>
+<br>
+
+<% if session[:last_viewed_post_id] %>
+  <p>Last post you viewed: <%= link_to "Post ##{session[:last_viewed_post_id]}", post_path(session[:last_viewed_post_id]) %> </p>
+<% end %>
+
 <%= link_to "New post", new_post_path %>
