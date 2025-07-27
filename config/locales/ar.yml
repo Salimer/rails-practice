@@ -1,0 +1,15 @@
+ar:
+  hello: ""
+  activerecord:
+    models:
+      user:
+        one: "مستخدم"
+        other: "المستخدمين"
+    attributes:
+      user:
+        name: "الاسم"
+        email: "البريد الالكتروني"
+  errors:
+    messages:
+      blank: "لا يمكن أن يكون فارغا"
+      taken: "هذا البريد مستخدم بالفعل"

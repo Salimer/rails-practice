@@ -2,7 +2,7 @@
 
 <% content_for :title, "Users" %>
 
-<h1>Users</h1>
+<h1><%= User.model_name.human(count: :other) %></h1>
 
 <div id="users">
   <% @users.each do |user| %>
@@ -13,4 +13,9 @@
   <% end %>
 </div>
 
+<p>Current locale: <%= I18n.locale %></p>
+
 <%= link_to "New user", new_user_path %>
+
+<%= link_to "English", url_for(locale: :en) %> |
+<%= link_to "عربي", url_for(locale: :ar) %>
